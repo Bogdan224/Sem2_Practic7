@@ -1,24 +1,33 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <string>
+#include<float.h>
+#include<iostream>
+#include<ctime>
 using namespace std;
 class Smartphone {
 private:
-    string model, manufacturer, color, display, ram, storage, cpu, os;
-    double price;
+    int year, camerasCount, ram, storage;
+    string model, manufacturer, color, cpu, os, chargerType;
+    double price, display;
 public:
     Smartphone();
-    Smartphone(string model, double price, string manufacturer,
-        string color, string display, string ram,
-        string storage, string cpu, string os);
+    Smartphone(int year, int camerasCount, string model, double price, string manufacturer,
+        string color, double display, int ram,
+        int storage, string cpu, string os, string chargerType);
+    int getYear() const;
+    int getCamerasCount() const;
     string getModel() const;
     string getManufacturer() const;
     string getColor() const;  
-    string getDisplay() const;
-    string getRAM() const;    
-    string getStorage() const;
+    double getDisplay() const;
+    int getRAM() const;    
+    int getStorage() const;
     string getCPU() const;    
     string getOS() const;
+    string getChargerType() const;
     double getPrice() const;  
     void setPrice(double price);
+    void Print();
 };
 
